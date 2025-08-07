@@ -6,7 +6,7 @@ from datetime import date
 class FleetVehicle(models.Model):
     _name = 'fleet.management.vehicle'
     _description = 'Fleet Management Vehicle'
-    _inherit = ['mail.thread', 'mail.activity.mixin'] # ADDED FOR CHATTER
+    _inherit = ['mail.thread', 'mail.activity.mixin']
 
     # --- SQL CONSTRAINTS ---
     _sql_constraints = [
@@ -39,6 +39,10 @@ class FleetVehicle(models.Model):
     ], string='Vehicle Type', default='car')
     notes = fields.Text(string='Notes')
 
+    # --- PHASE 4 FIELDS ---
+    image_1920 = fields.Image("Image")
+    is_published = fields.Boolean(string="Publish on Website", copy=False)
+
     @api.constrains('year')
     def _check_year(self):
         for vehicle in self:
@@ -52,7 +56,6 @@ class FleetVehicle(models.Model):
         else:
             self.notes = ""
 
-    # --- UPDATED ORM METHOD OVERRIDE ---
     @api.model_create_multi
     def create(self, vals_list):
         for vals in vals_list:

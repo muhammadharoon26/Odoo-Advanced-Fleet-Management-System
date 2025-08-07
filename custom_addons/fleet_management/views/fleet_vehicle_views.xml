@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- ... list view is unchanged ... -->
     <record id="view_fleet_management_vehicle_tree" model="ir.ui.view">
         <field name="name">fleet.management.vehicle.tree</field>
         <field name="model">fleet.management.vehicle</field>
@@ -25,11 +24,11 @@
                     <button name="action_set_in_use" type="object" string="Set to In Use" class="oe_highlight" invisible="state != 'available'"/>
                     <button name="action_set_maintenance" type="object" string="Set to Maintenance" invisible="state not in ('available', 'in_use')"/>
                     <button name="action_set_available" type="object" string="Set to Available" invisible="state == 'available'"/>
-                    <!-- PHASE 3: PRINT BUTTON -->
                     <button name="%(fleet_management.action_report_vehicle_details)d" type="action" string="Print Details"/>
                     <field name="state" widget="statusbar" statusbar_visible="available,in_use,maintenance"/>
                 </header>
                 <sheet>
+                    <field name="image_1920" widget="image" class="oe_avatar"/>
                     <div class="oe_title">
                         <h1><field name="name"/></h1>
                     </div>
@@ -40,10 +39,11 @@
                             <field name="year"/>
                             <field name="vehicle_type"/>
                         </group>
-                        <group string="Identification">
+                        <group string="Identification &amp; Publishing">
                             <field name="license_plate"/>
                             <field name="vin"/>
                             <field name="active"/>
+                            <field name="is_published"/>
                         </group>
                     </group>
                     <notebook>
@@ -58,6 +58,11 @@
                         </page>
                     </notebook>
                 </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
             </form>
         </field>
     </record>

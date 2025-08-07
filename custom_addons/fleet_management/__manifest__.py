@@ -11,7 +11,7 @@
     'category': 'Services/Fleet',
     'version': '18.0.1.0.0',
     'license': 'LGPL-3',
-    'depends': ['base', 'fleet', 'mail'],
+    'depends': ['base', 'fleet', 'mail', 'website'],
     'data': [
         'security/ir.model.access.csv',
         'data/sequence_data.xml',
@@ -20,6 +20,8 @@
         'views/fleet_vehicle_search_views.xml',
         'views/fleet_vehicle_views.xml',
         'views/fleet_driver_views.xml',
+        'views/fleet_inquiry_views.xml',
+        'views/fleet_web_templates.xml',
         'views/menus.xml',
     ],
     'application': True,

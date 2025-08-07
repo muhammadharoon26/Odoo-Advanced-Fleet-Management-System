@@ -1,3 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_fleet_management_vehicle_user,fleet.management.vehicle.user,model_fleet_management_vehicle,base.group_user,1,1,1,1
 access_fleet_management_driver_user,fleet.management.driver.user,model_fleet_management_driver,base.group_user,1,1,1,1
+access_fleet_management_inquiry_user,fleet.management.inquiry.user,model_fleet_management_inquiry,base.group_user,1,1,1,1

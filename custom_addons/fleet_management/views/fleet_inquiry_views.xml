@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_fleet_management_inquiry_tree" model="ir.ui.view">
+        <field name="name">fleet.management.inquiry.tree</field>
+        <field name="model">fleet.management.inquiry</field>
+        <field name="arch" type="xml">
+            <list string="Inquiries">
+                <field name="vehicle_id"/>
+                <field name="customer_name"/>
+                <field name="customer_email"/>
+                <field name="create_date" string="Received On"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_fleet_management_inquiry_form" model="ir.ui.view">
+        <field name="name">fleet.management.inquiry.form</field>
+        <field name="model">fleet.management.inquiry</field>
+        <field name="arch" type="xml">
+            <form string="Inquiry">
+                <sheet>
+                    <group>
+                        <field name="vehicle_id"/>
+                        <field name="customer_name"/>
+                        <field name="customer_email"/>
+                        <field name="customer_phone"/>
+                        <field name="message"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+</odoo>
