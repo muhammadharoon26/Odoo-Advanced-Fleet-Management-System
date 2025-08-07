@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_fleet_management_vehicle_search" model="ir.ui.view">
+        <field name="name">fleet.management.vehicle.search</field>
+        <field name="model">fleet.management.vehicle</field>
+        <field name="arch" type="xml">
+            <search string="Search Vehicles">
+                <field name="name"/>
+                <field name="make"/>
+                <field name="model"/>
+                <field name="license_plate"/>
+                <field name="driver_id"/>
+                <separator/>
+                <filter string="Available" name="available" domain="[('state', '=', 'available')]"/>
+                <filter string="In Use" name="in_use" domain="[('state', '=', 'in_use')]"/>
+                <filter string="Maintenance" name="maintenance" domain="[('state', '=', 'maintenance')]"/>
+            </search>
+        </field>
+    </record>
+</odoo>
