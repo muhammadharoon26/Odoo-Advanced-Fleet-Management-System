@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="action_report_vehicle_details" model="ir.actions.report">
+            <field name="name">Vehicle Details</field>
+            <field name="model">fleet.management.vehicle</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">fleet_management.report_vehicle_details_template</field>
+            <field name="report_file">fleet_management.report_vehicle_details_template</field>
+            <field name="binding_model_id" ref="model_fleet_management_vehicle"/>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+</odoo>

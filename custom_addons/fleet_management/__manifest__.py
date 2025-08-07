@@ -11,9 +11,12 @@
     'category': 'Services/Fleet',
     'version': '18.0.1.0.0',
     'license': 'LGPL-3',
-    'depends': ['base','fleet'],
+    'depends': ['base', 'fleet', 'mail'],
     'data': [
         'security/ir.model.access.csv',
+        'data/sequence_data.xml',
+        'report/report_actions.xml',
+        'report/vehicle_report_templates.xml',
         'views/fleet_vehicle_search_views.xml',
         'views/fleet_vehicle_views.xml',
         'views/fleet_driver_views.xml',
@@ -21,4 +24,5 @@
     ],
     'application': True,
     'installable': True,
+    'icon': '/fleet_management/static/description/icon.png',
 }
